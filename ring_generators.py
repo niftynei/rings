@@ -2,6 +2,7 @@ import itertools
 import time
 
 
+# int_in needs to be set to something for the "priming" step
 def pass_message(int_in = -1):
     while True:
         int_in = yield int_in
@@ -27,8 +28,9 @@ def main():
         nodes.append(node)
     print("made nodes")
     message = 10000
-    #while True:
+    # start tracking time
     start = time.time()
+    # itertools.cycle gives us an infinite cycle of nodes
     for gen in itertools.cycle(nodes):
         message = gen.send(message)
         if message == 0:
