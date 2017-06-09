@@ -49,10 +49,10 @@ func (p *Process) Loop() {
 			if p.IsFirst {
 				msg--
 				if msg < 0 {
-					fmt.Println("Finished! Exiting...")
+					// fmt.Println("Finished! Exiting...")
 					p.Done <- true
 				} else {
-					fmt.Println("Finished a loop, starting on", msg)
+					// fmt.Println("Finished a loop, starting on", msg)
 				}
 			}
 			p.SendMsg <- msg
